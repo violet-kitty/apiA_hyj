@@ -1,0 +1,107 @@
+@charset "UTF-8";
+
+body {
+	background-color: #ffe6f2;
+}
+
+input {
+	border: none;
+	outline: none;
+	width: 95%;
+	height: 30px;
+}
+
+textarea {
+	border: none;
+	outline: none;
+	width: 99%;
+	resize: none;
+}
+
+h1 {
+	color: #ff3399;
+	text-align: center;
+}
+
+.center {
+	text-align: center;
+}
+
+.pinkbutton {
+	background-color: #ffe6f2;
+	border-radius: 5px;
+	border: 1px solid #ffe6f2;
+	color: #ff0080;
+	font-size: 1.2em;
+	display: inline-block;
+	margin: 10px;
+	width: 100px;
+	height: 30px;
+	cursor: pointer;
+}
+
+hr {
+	border: 1px solid #ff0080;
+}
+
+td {
+	border: 1px solid #ff0080;
+	border-collapse: collapse;
+	text-align: left;
+	vertical-align: top;
+	padding-top: 5px;
+	padding-left: 5px;
+}
+
+table {
+	background-color: white;
+	border: 1px solid #ff0080;
+	border-collapse: collapse;
+	border-left: none;
+	border-right: none;
+	border-bottom: none;
+	border-radius: 5px;
+	width: 1000px;
+	height: 600px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+th {
+	border: 1px solid #ff0080;
+	border-collapse: collapse;
+	text-align: center;
+}
+
+tfoot {
+	border-bottom: none;
+	text-align: center;
+}
+
+div {
+	text-align: center;
+}
+
+.roundDiv {
+	border-radius: 5px;
+	background-color: white;
+	width: 1050px;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	vertical-align: center;
+	padding-top: 20px;
+}
+
+.title {
+	font-size: 1.5em;
+}
+
+.writer {
+	color: gray;
+}
+
+.divide {
+	border: 1px solid gray;
+}

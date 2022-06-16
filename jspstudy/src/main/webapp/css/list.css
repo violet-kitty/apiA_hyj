@@ -1,0 +1,115 @@
+@charset "UTF-8";
+
+.search{
+	width : 1000px;
+	text-align : right;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.search td{
+	text-align : right;
+}
+
+.search input[type=submit]{
+	background-color: #ffe6f2;
+	border-radius: 5px;
+	border: none;
+	color: #ff0080;
+	display: inline-block;
+	width: 50px;
+	height: 25px;
+	cursor: pointer;
+}
+
+.search select {
+	border-radius: 1px;
+	border: 2px solid #ff3399;
+	outline-color: #ff0080;
+}
+
+.search input[type=text]{
+	border-radius: 1px;
+	border-color: #ff3399;
+	outline-color: #ff0080;
+}
+
+.list{
+	border: 1px solid #ff0080;
+	border-collapse: collapse;
+	border-left: none;
+	border-right: none;
+	width: 1000px;
+	border-bottom: none;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.list td, th {
+	border: 1px solid #ff0080;
+	border-collapse: collapse;
+	border-left: none;
+	border-right: none;
+	height : 30px;
+}
+
+ .list th {
+	background-color: #ffe6f2;
+}
+
+tfoot {
+	border-bottom: none;
+}
+
+.list tbody tr:hover {
+	background: #ffe6f2;
+}
+
+.list table caption {
+	text-align: left;
+}
+
+.paging{
+	text-align: center;
+	border: none;
+	width: 1000px;
+	border-collapse: collapse;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.paging td{
+	height : 30px;
+}
+
+div {
+	text-align: center;
+}
+
+h1 {
+	text-align: center;
+	color: #ff0080;
+}
+
+hr {
+	border: 1px solid #ff0080;
+}
+
+.pinkbutton {
+	background-color: #ffe6f2;
+	border-radius: 5px;
+	border: 1px solid #ff0080;
+	color: #ff0080;
+	font-size: 1.2em;
+	display: inline-block;
+	margin: 10px;
+	width: 200px;
+	height: 50px;
+	cursor: pointer;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
