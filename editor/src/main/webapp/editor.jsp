@@ -12,6 +12,7 @@
  
 </head>
 <body>
+<h1>유진씨 헬로 ㅎㅎㅎㅎㅎㅎㅎ</h1>
 <form action="<%= request.getContextPath() %>/board/editorInsert.do" method="post">
 	<textarea name="ir1" id="ir1" rows="10" cols="100" style="width:766px; height:412px; display:none;"></textarea>
 	<!--textarea name="ir1" id="ir1" rows="10" cols="100" style="width:100%; height:412px; min-width:610px; display:none;"></textarea-->
