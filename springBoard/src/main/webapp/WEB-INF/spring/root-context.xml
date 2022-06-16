@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	<!-- DB에 관련된 객체를 생성하는 곳 -->
+	
+	<!-- DB에 연결할 정보를 가지고 있는 객체 / DBconn과 같은 역할을 함 -->
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<!-- 어떤 jdbc를 사용할지 지정. 오라클은 ojdbc, mysql은 mysql? -->
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
+		<!-- 로컬 오라클 경로값 넣기 -->
+		<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
+		<!-- user와 password 넣기 -->
+		<property name="username" value="system"/>
+		<property name="password" value="1234"/>
+	</bean>
+	
+	<!-- 알아서 connection하고 close 하는 빈 -->
+	<!-- SqlSessionFactoryBean DB에 연결하고 다 쓴 다음 연결 끊는 역할을 함 -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<!-- 어떤 DB 정보를 가지고 연결할지에 대한 정보 주기 -->
+		<property name="dataSource" ref="dataSource"/>
+		<!-- 마이바티스의 설정정보를 담고 있는 xml의 위치 -->
+		<!-- classpath:를 쓰면 resources를 보게됨. 그 하위에 파일 둘 것  -->
+		<!-- 이 위치에 설정 파일이 있다고 정의했으므로 아무런 설정정보가 없어도 파일이 반드시 그 위치에 있어야함 -->
+		<property name="configLocation" value="classpath:mybatis-config.xml"/>
+		<!-- 쿼리 정보를 가지고 있는 xml -->
+		<!-- 알아서 excute 하는데 이 안에 mapper라는 이름으로 쿼리들이 집단으로 들어감 -->
+		<!-- mapper들 위치는 classpath:mappers 하위 어딘가 있는데 이름이 Mapper.xml로 끝남 -->
+		<property name="mapperLocations" value="classpath:mappers/**/*Mapper.xml"></property>
+	</bean>
+	
+	<!-- excuteQuery 할 수 있는 객체(PreparedStatement 역할) -->
+	<!-- destroy-method="clearCache" : 쿼리를 날릴때마다 캐시 클리어 -->
+	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate" destroy-method="clearCache">
+		<!-- SqlSessionTemplate은 매개변수 하나 받는 생성자가 여러개라 name을 통해 어떤 매개변수 받을지 지정해줌 -->
+		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"></constructor-arg>
+	</bean>
+</beans>

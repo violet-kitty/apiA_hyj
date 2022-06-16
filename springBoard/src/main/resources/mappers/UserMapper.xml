@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+ <!-- 공통 관심사 관련 mapper들을 묶어놓고 정의 -->
+ <!-- namespace : 나중에 dao에서 호출할 mapper의 이름 -->
+<mapper namespace="edu.board.mapper.UserMapper">
+	<!-- parameterType : 넘어오는 vo 특정하는 것 -->
+	<!-- vo를 특정했으므로 vo 값을 꺼내고 싶다면 #과 {}를 쓰고 그 안에 필드명을 입력 -->
+	<insert id="insert" parameterType="userVO">
+		INSERT INTO springuser(
+			midx
+			,id
+			,password
+			,name
+		)VALUES(
+			springuser_midx.nextval
+			,#{id}
+			,#{password}
+			,#{name}
+		)
+	</insert>
+	
+</mapper>

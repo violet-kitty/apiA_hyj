@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+ <!-- 공통 관심사 관련 mapper들을 묶어놓고 정의 -->
+ <!-- namespace : 나중에 dao에서 호출할 mapper의 이름 -->
+<mapper namespace="edu.board.mapper.boardMapper">
+	<!-- select -->
+	<!-- 해당 스페이스 내에서는 쿼리들의 id가 다 달라야함 -->
+	<!-- 다른 mapper인 경우 상관 x -->
+	<!-- resultType : 리턴되는 데이터를 어떤 vo에 담을지 지정 -->
+	<!-- 전체 컬럼이 필요해도 가독성을 위해 * 쓰지 않음. 만약 * 쓰면 컬럼 뭐있는지 보기 위해 db에 접근해야 하므로... -->
+	<select id="selectAll">
+		SELECT bidx
+			, title
+			, midx
+			, content
+			, wdate
+			FROM springboard
+	</select>
+	
+</mapper>

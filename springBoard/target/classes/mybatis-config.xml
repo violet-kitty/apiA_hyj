@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0/EN"
+				"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<typeAliases>
+		<!-- mapper에서 사용할  vo의 별칭을 등록해두는 곳 -->
+		<!-- 만약 컬럼 이름이 vo 필드 이름과 같다면 알아서 반환 받아옴. 어떤 vo로 받아올지만 정의해주면 됨 -->
+		<!-- 클래스 이름까지가 클래스 이름이라 너무 길어서 별칭을 이곳에 정해둠 -->
+        <!-- <typeAlias type="edu.study.vo.BoardVO" alias="boardVO"/> -->
+        
+        <typeAlias type="edu.board.vo.UserVO" alias="userVO"/>
+        
+    </typeAliases>
+
+</configuration>
